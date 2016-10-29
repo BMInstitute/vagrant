@@ -2,7 +2,19 @@
 
 # 24 Dec 2015 : GWA : Minimal box is very minimal. Use to get
 # add-apt-repository, updatedb, tmux.
+mv /etc/apt/sources.list /etc/apt/sources.list.bak
+cp /tmp/sources.list /etc/apt/sources.list
+
+gpg --keyserver keyserver.ubuntu.com --recv-keys  16126D3A3E5C1192
+gpg -a --export  16126D3A3E5C1192 | sudo apt-key add -
+
+#add-apt-repository ppa:geoffrey-challen/os161-toolchain > /dev/null 2>&1 && true
+#add-apt-repository ppa:git-core/ppa > /dev/null 2>&1 && true
+
+#apt-get -y install software-properties-common
+
 apt-get -y update
+
 apt-get -y install software-properties-common locate tmux bash-completion man lsof iotop dos2unix
 add-apt-repository ppa:geoffrey-challen/os161-toolchain > /dev/null 2>&1 && true
 add-apt-repository ppa:git-core/ppa > /dev/null 2>&1 && true

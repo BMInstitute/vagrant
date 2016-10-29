@@ -5,7 +5,7 @@ VAGRANT_COMMAND = ARGV[0]
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "minimal/trusty64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = "zion"
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -30,6 +30,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "file", source: ".provision/sharedfolders.conf", destination: "/tmp/sharedfolders.conf"
+  config.vm.provision "file", source: ".provision/sources.list", destination: "/tmp/sources.list"
   config.vm.provision "file", source: ".provision/.bashrc", destination: "/tmp/.bashrc"
   config.vm.provision "shell",  path: ".provision/provision.sh"
   

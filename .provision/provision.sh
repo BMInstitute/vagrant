@@ -43,7 +43,7 @@ if ! id -u trinity > /dev/null 2>&1 ; then
 	echo "GSSAPIAuthentication no" >> /etc/ssh/sshd_config
 	service ssh reload
 
-	echo "America/New_York" > /etc/timezone
+	echo "Asia/Shanghai" > /etc/timezone
 	dpkg-reconfigure --frontend noninteractive tzdata 2>/dev/null
 fi
 

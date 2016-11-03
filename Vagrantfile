@@ -6,7 +6,7 @@ VAGRANT_COMMAND = ARGV[0]
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "zion"
+  config.vm.hostname = "ASST-CN"
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder "src", "/home/trinity/src", create: true
@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |v|
     # 24 Dec 2015 : GWA : This is a fairly lightweight configuration. Feel
     # free to beef it up to improve performance as needed.
-    v.name = "ops-class.org 1.0"
+    v.name = "ops-class.org 1.0 cn"
     v.cpus = "1"
     v.memory = "512"
     # 24 Dec 2015 : GWA : Uncomment this if you want a GUI environment.
